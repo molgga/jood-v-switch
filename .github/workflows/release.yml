@@ -3,7 +3,7 @@ name: Release deploy
 on:
   release:
     types:
-      - created
+      - published
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+**"
 
