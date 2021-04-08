@@ -95,14 +95,14 @@ export default {
     code: `<jd-switch-group
   :multiple="true"
   :toggle="true"
-  :allChoiceValue="0"
+  allChoiceValue="it-is-all"
   v-model="state.myValue40"
   @update:modelValue="onTestChange"
 >
-  <jd-switch-item :value="0" class="switch-item">
+  <jd-switch-item value="it-is-all" class="switch-item">
     <template #default="switchScope">
       <sample-check :checked="switchScope.state.isActive" @click="switchScope.click()">
-        {{ switchScope.state }}
+        value="it-is-all" {{ switchScope.state }}
       </sample-check>
     </template>
   </jd-switch-item>
@@ -111,7 +111,7 @@ export default {
     <jd-switch-item v-for="item in 3" :key="item" :value="item" class="switch-item">
       <template #default="switchScope">
         <sample-check :checked="switchScope.state.isActive" @click="switchScope.click()">
-          {{ switchScope.state }}
+          value={{ item }} {{ switchScope.state }}
         </sample-check>
       </template>
     </jd-switch-item>
