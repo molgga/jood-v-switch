@@ -3,7 +3,7 @@ name: Release Github pages
 on:
   release:
     types:
-      - created
+      - published
     tags:
       - "doc[0-9]+.[0-9]+.[0-9]+**"
 
