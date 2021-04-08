@@ -1,0 +1,33 @@
+{
+  "name": "jood-v-switch",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install --production=false && npm run generate && npm run symlink",
+    "symlink": "cd ./packages/lib && yarn link && cd ../../packages/dev && yarn link @jood/v-switch && cd ../../",
+    "generate": "yarn workspace @jood/v-switch generate",
+    "page:example-dist": "yarn workspace dev build",
+    "page:example-make": "copyfiles -u 3 ./packages/dev/dist-example/* ./packages/dev/dist-example/**/* ./docs",
+    "page:document-dist": "jsdoc -c jsdoc.json -r -d docs/documents",
+    "page:clear": "rm -rf docs",
+    "page:expose": "npm run page:example-dist && npm run page:example-make && npm run page:document-dist",
+    "ci:bootstrap": "yarn install --production=false",
+    "ci:test": "yarn workspace @jood/v-switch test",
+    "ci:build": "npm run generate",
+    "ci:deploy-before": "npm run ci:build && npm run symlink && npm run page:clear && npm run page:expose",
+    "ci:deploy-pre-test": "npm run ci:test && npm run ci:deploy-before"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "vue",
+    "vue3",
+    "vue3.0",
+    "composition-api",
+    "switch",
+    "radio",
+    "checkbox"
+  ]
+}
