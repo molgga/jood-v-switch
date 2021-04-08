@@ -4,7 +4,6 @@ Switch = radio-button, checkbox
 
 This is a dedicated package for Vue3.
 
-
 > __[Demo](https://molgga.github.io/jood-v-switch)__
 | __[Demo source code](https://github.com/molgga/jood-v-switch/tree/master/packages/dev/src/components/demo-vue3)__
 | __[Documentation](https://molgga.github.io/jood-v-switch/documents)__
