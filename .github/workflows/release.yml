@@ -2,8 +2,6 @@ name: Release deploy
 
 on:
   release:
-    types:
-      - published
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+**"
 
