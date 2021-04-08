@@ -2,8 +2,6 @@ name: Release Github pages
 
 on:
   release:
-    types:
-      - published
     tags:
       - "doc[0-9]+.[0-9]+.[0-9]+**"
 
@@ -16,6 +14,12 @@ jobs:
         with:
           node-version: 12
 
+      - name: Build and Test
+        run: |
+          yarn install --frozen-lockfile
+          npm run ci:test
+          npm run ci:deploy-before
+          
       - name: Github pages publish
         uses: peaceiris/actions-gh-pages@v3
         with:
