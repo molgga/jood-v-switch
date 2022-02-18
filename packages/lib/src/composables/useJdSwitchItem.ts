@@ -1,12 +1,7 @@
 import { reactive, onMounted, onUnmounted, computed, UnwrapRef } from 'vue';
 import { Subscription } from 'rxjs';
 import { useJdSwitchGroup } from './useJdSwitchGroup';
-
-interface ItemConfig {
-  props: UnwrapRef<{
-    value: any;
-  }>;
-}
+import { ItemConfig } from './types';
 
 export function useJdSwitchItem<V = any>(config: ItemConfig): any {
   const { props } = config;
