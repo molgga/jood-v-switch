@@ -1,9 +1,9 @@
 {
   "name": "@jood/v-switch",
   "version": "0.1.1",
-  "main": "dist/v-switch.common.js",
+  "main": "dist/v-switch.umd.js",
+  "module": "dist/v-switch.umd.js",
   "types": "dist/types/index.d.ts",
-  "module": "src/index.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
