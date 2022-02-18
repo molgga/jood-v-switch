@@ -3,7 +3,7 @@ name: Release deploy
 on:
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+**"
+      - 'v[0-9]+.[0-9]+.[0-9]+**'
 
 jobs:
   release:
@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 16
           registry-url: https://registry.npmjs.org/
 
       - name: Build and Test
@@ -30,4 +30,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-set-runners-access-token-github_token
-          publish_dir: "./docs"
+          publish_dir: './docs'
